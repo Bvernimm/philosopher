@@ -3,8 +3,8 @@ NAME	= philo
 OBJ		= ${SRCS:.c=.o}
 SRCS	= $(wildcard src/*.c)\
 
-CFLAGS = -pthread -Wall -Wextra -Werror
-CC = gcc
+CFLAGS	= -pthread -Wall -Wextra -Werror
+CC		= gcc
 
 $(NAME): $(OBJ)
 		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
