@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:16:19 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/06/02 09:39:19 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/06/02 15:27:24 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void	monitoring(t_init **arg)
 			if ((*arg)->philo_full != (*arg)->nb_philo)
 				printf("%lld %d %s\n", ft_time(1), philo[i].philo_nb, "died");
 			pthread_mutex_unlock(&(*arg)->lock);
+			if ((*arg)->nb_philo == 1)
+				pthread_mutex_unlock(&philo[0].fork);
 			return ;
 		}
 		i++;
