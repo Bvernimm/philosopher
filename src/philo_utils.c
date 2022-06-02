@@ -6,15 +6,15 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 09:58:36 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/06/01 10:12:42 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/06/02 09:52:39 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int64_t	ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-	int64_t	nb;
+	int		nb;
 	int		neg;
 	int		i;
 
