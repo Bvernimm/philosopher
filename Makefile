@@ -1,31 +1,18 @@
-NAME = philo
+NAME	= philo
 
-SRC = $(wildcard src/*.c)\
+OBJ		= ${SRCS:.c=.o}
+SRCS	= $(wildcard src/*.c)\
 
-INCLUDES = includes
-
-OBJ = $(SRC:.c=.o)
-
-CFLAGS = -pthread -Wall -Wextra -Werror
-
-CC = gcc
-
-$(RM) = rm -rf
-
-.c.o: $(SRC)
-	$(CC) $(CFLAGS) -I $(INCLUDES) -c -o $@ $<
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $@
+		gcc $(OBJ) -Wall -Werror -Wextra -o $(NAME)
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+		rm -rf $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+		rm -rf $(NAME)
 
 re: fclean all
-
-.PHONY: $(NAME) all clean fclean re
