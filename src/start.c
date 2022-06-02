@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:16:19 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/06/01 15:57:38 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/06/02 09:33:37 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*routine(void *philosophe)
 		if (philo->time_eaten == (*arg)->nb_to_eat)
 			(*arg)->philo_full++;
 		sleeping(arg, philo);
-		speak(&(*arg)->lock, philo->philo_nb, "is thinking", (*arg)->stop);
+		speak(arg, philo->philo_nb, "is thinking");
 	}
 	return (0);
 }

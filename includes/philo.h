@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 09:52:17 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/06/01 15:38:05 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/06/02 09:33:30 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	monitoring(t_init **arg);
 int		start(t_init **arg);
 
 /*act*/
-void	speak(pthread_mutex_t *lock, int philo, char *str, int stop);
+void	speak(t_init **arg, int philo, char *str);
 void	eat(t_init **arg, t_philosophe *philo);
 void	sleeping(t_init **arg, t_philosophe *philo);
 
