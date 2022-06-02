@@ -4,9 +4,10 @@ OBJ		= ${SRCS:.c=.o}
 SRCS	= $(wildcard src/*.c)\
 
 CFLAGS = -pthread -Wall -Wextra -Werror
+CC = gcc
 
 $(NAME): $(OBJ)
-		gcc $(CFLAGS) $(OBJ) -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 
