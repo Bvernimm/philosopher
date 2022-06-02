@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:16:19 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/06/02 09:33:37 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/06/02 09:39:19 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*routine(void *philosophe)
 	pthread_mutex_unlock(&(*arg)->start);
 	philo->time_stop = ft_time(1) + (*arg)->time_to_die;
 	if (philo->philo_nb % 2)
-		ft_wait(10);
+		ft_wait(5);
 	while ((*arg)->stop)
 	{
 		eat(arg, philo);
@@ -76,7 +76,7 @@ int	start(t_init **arg)
 	}
 	ft_time(0);
 	pthread_mutex_unlock(&(*arg)->start);
-	ft_wait(100);
+	ft_wait(10);
 	monitoring(arg);
 	i = 0;
 	while (i < (*arg)->nb_philo)
