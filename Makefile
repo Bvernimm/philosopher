@@ -3,9 +3,10 @@ NAME	= philo
 OBJ		= ${SRCS:.c=.o}
 SRCS	= $(wildcard src/*.c)\
 
+CFLAGS = -pthread -Wall -Wextra -Werror
 
 $(NAME): $(OBJ)
-		gcc $(OBJ) -Wall -Werror -Wextra -o $(NAME)
+		gcc $(CFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 
