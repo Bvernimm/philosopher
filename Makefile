@@ -6,8 +6,8 @@ RESET	:= $(shell tput -Txterm sgr0)
 NAME	= philo
 
 OBJS	= ${SRCS:.c=.o}
-SRC		= act.c check_arg.c init.c main.c philo_utils.c start.c
 SRCS	= ${addprefix src/, ${SRC}}
+SRC		= act.c check_arg.c init.c main.c philo_utils.c start.c
 
 CFLAGS	= -pthread -Wall -Wextra -Werror
 CC		= gcc
