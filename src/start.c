@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:16:19 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/06/02 15:27:24 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/06/13 10:34:47 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*routine(void *philosophe)
 	pthread_mutex_unlock(&(*arg)->start);
 	philo->time_stop = ft_time(1) + (*arg)->time_to_die;
 	if (philo->philo_nb % 2)
-		ft_wait(5);
+		ft_wait((*arg)->time_to_eat / 2);
 	while ((*arg)->stop)
 	{
 		eat(arg, philo);
@@ -52,7 +52,7 @@ void	monitoring(t_init **arg)
 			pthread_mutex_lock(&(*arg)->lock);
 			(*arg)->stop = 0;
 			if ((*arg)->philo_full != (*arg)->nb_philo)
-				printf("%lld %d %s\n", ft_time(1), philo[i].philo_nb, "died");
+				printf("%d %d %s\n", ft_time(1), philo[i].philo_nb, "died");
 			pthread_mutex_unlock(&(*arg)->lock);
 			if ((*arg)->nb_philo == 1)
 				pthread_mutex_unlock(&philo[0].fork);
@@ -78,7 +78,7 @@ int	start(t_init **arg)
 	}
 	ft_time(0);
 	pthread_mutex_unlock(&(*arg)->start);
-	ft_wait(10);
+	ft_wait((*arg)->time_to_die);
 	monitoring(arg);
 	i = 0;
 	while (i < (*arg)->nb_philo)

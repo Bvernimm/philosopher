@@ -6,13 +6,13 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 09:53:04 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/06/02 15:15:08 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/06/13 10:33:23 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	ft_wait(int64_t time)
+void	ft_wait(int time)
 {
 	time = time + ft_time(1);
 	while (1)
@@ -23,9 +23,9 @@ void	ft_wait(int64_t time)
 	}
 }
 
-int64_t	ft_time(int indicator)
+int	ft_time(int indicator)
 {
-	static int64_t	start_time;
+	static int		start_time;
 	struct timeval	current_time;
 
 	gettimeofday(&current_time, NULL);

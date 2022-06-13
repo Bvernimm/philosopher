@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 13:11:56 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/06/02 09:35:17 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/06/13 10:34:22 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	speak(t_init **arg, int philo, char *str)
 {
 	pthread_mutex_lock(&(*arg)->lock);
 	if ((*arg)->stop != 0)
-		printf("%lld %d %s\n", ft_time(1), philo, str);
+		printf("%d %d %s\n", ft_time(1), philo, str);
 	pthread_mutex_unlock(&(*arg)->lock);
 }
 

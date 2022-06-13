@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 09:59:50 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/06/01 10:00:02 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/06/13 10:25:24 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	ft_is_valid_digit(char *str)
 	int		i;
 
 	i = 0;
+	if (str[0] == '0')
+		return (1);
 	while (str[i])
 	{
 		if (str[i] >= '0' && str[i] <= '9')

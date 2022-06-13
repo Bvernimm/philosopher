@@ -1,8 +1,3 @@
-YELLOW	:= $(shell tput -Txterm setaf 3)
-GREEN	:= $(shell tput -Txterm setaf 2)
-RED		:= $(shell tput -Txterm setaf 1)
-RESET	:= $(shell tput -Txterm sgr0)
-
 NAME	= philo
 
 OBJS	= ${SRCS:.c=.o}
@@ -14,22 +9,18 @@ CC		= gcc
 
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
-	@printf "${YELLOW}Compiling [%s]...%-42s${RESET}\r" $<
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	@$(CC) $(OBJS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
-	@echo "\n${GREEN}Finished : $(NAME)${RESET}"
+	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
 
 all:	${NAME}
 
 clean:
-		@rm -rf ${OBJS}
-		@echo "${RED}Removing objects...${RESET}"
+		rm -rf ${OBJS}
 
 fclean:	clean
-		@rm -rf ${NAME}
-		@echo "${RED}Removing ${NAME}...${RESET}"
+		rm -rf ${NAME}
 
 re:		fclean all
 

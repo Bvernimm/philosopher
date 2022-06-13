@@ -6,7 +6,7 @@
 /*   By: bvernimm <bvernimm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 09:52:17 by bvernimm          #+#    #+#             */
-/*   Updated: 2022/06/02 10:25:10 by bvernimm         ###   ########.fr       */
+/*   Updated: 2022/06/13 10:33:49 by bvernimm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <sys/time.h>
-# include <inttypes.h>
 # include <stdatomic.h>
 
 typedef struct s_philosophe
@@ -47,8 +46,8 @@ typedef struct s_init
 }					t_init;
 
 /*main*/
-void	ft_wait(int64_t time);
-int64_t	ft_time(int indicator);
+void	ft_wait(int time);
+int		ft_time(int indicator);
 void	ft_free(t_init **arg);
 
 /*check_arg*/
